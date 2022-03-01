@@ -1,10 +1,17 @@
-const Question = ({ text, answers, onAnswer }) => {
+const Question = ({ text, answers, nextQuestionId, onAnswer }) => {
   return (
     <>
       <h3>{text}</h3>
       <div>
         {answers.map((answer) => (
-          <button onClick={() => onAnswer(answer.text, answer.nextQuestionId)}>
+          <button
+            onClick={() => {
+              if (!answer.nextQuestionId) {
+                answer = { ...answer, nextQuestionId };
+              }
+              onAnswer(answer);
+            }}
+          >
             {answer.text}
           </button>
         ))}
