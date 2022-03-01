@@ -1,5 +1,6 @@
 import "./App.css";
 import NavBar from "./Components/NavBar/NavBar";
+import Shelf from "./Components/Shelf/Shelf";
 import "./index.css";
 import { Route, Switch, Link } from "react-router-dom";
 
@@ -20,6 +21,7 @@ function App() {
               Check Your Skincare Shelf
             </button>
           </div>
+          <Shelf />
         </Route>
       </Switch>
     </div>
