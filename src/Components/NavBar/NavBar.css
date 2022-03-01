@@ -1,0 +1,12 @@
+.nav-bar {
+  display: flex;
+  background-color: #d8fbc2;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  margin: 0;
+}
