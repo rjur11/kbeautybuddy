@@ -6,12 +6,22 @@ import { Route, Switch, Link } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <NavBar />
-      <div className="main-buttons">
-        <button>Take Skincare Quiz</button>
-        <button>See Skin Profile</button>
-        <button>Check Your Skincare Shelf</button>
-      </div>
+      <Switch>
+        <Route exact path="/">
+          <NavBar />
+          <div className="main-buttons">
+            <button onClick={() => console.log("Quiz")}>
+              Take Skincare Quiz
+            </button>
+            <button onClick={() => console.log("Profile")}>
+              See Skin Profile
+            </button>
+            <button onClick={() => console.log("Shelf")}>
+              Check Your Skincare Shelf
+            </button>
+          </div>
+        </Route>
+      </Switch>
     </div>
   );
 }
