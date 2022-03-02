@@ -1,0 +1,12 @@
+.quiz-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.quiz-title {
+  font-size: 35px;
+}
+.question-button {
+  margin: 5px;
+}

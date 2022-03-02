@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import "./LandingPage.css";
+
 const LandingPage = () => {
   return (
     <div className="main-buttons">
