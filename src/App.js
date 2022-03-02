@@ -30,7 +30,7 @@ function App() {
         />
       </Route>
       <Route exact path="/profile">
-        <Profile />
+        <Profile results={quizResult} />
       </Route>
     </div>
   );
