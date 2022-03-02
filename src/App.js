@@ -3,37 +3,31 @@ import NavBar from "./Components/NavBar/NavBar";
 import Shelf from "./Components/Shelf/Shelf";
 import Quiz from "./Components/Quiz/Quiz";
 import quizQuestions from "./Utils/quizQuestions";
+import LandingPage from "./Components/LandingPage/LandingPage";
 import Profile from "./Components/Profile/Profile";
 import "./index.css";
-import { Route, Switch, Link } from "react-router-dom";
+import { Route, useHistory } from "react-router-dom";
 import { useState } from "react";
 
 function App() {
   const [quizResult, setQuizResult] = useState(null);
+  const history = useHistory();
   return (
     <div className="App">
       <NavBar />
-      {quizResult === null ? (
+      <Route exact path="/">
+        <LandingPage />
+      </Route>
+
+      <Route exact path="/quiz">
         <Quiz
           questions={quizQuestions}
-          onComplete={(answers, obj) => setQuizResult(obj)}
+          onComplete={(answers, obj) => {
+            setQuizResult(obj);
+            history.push("/");
+          }}
         />
-      ) : (
-        <>
-          <div className="main-buttons">
-            <button onClick={() => setQuizResult(null)}>
-              {quizResult === null ? "Take " : "Retake "} Skincare Quiz
-            </button>
-            <button onClick={() => console.log("Profile")}>
-              See Skin Profile
-            </button>
-            <button onClick={() => console.log("Shelf")}>
-              Check Your Skincare Shelf
-            </button>
-          </div>
-        </>
-      )}
-      <Profile />
+      </Route>
     </div>
   );
 }
