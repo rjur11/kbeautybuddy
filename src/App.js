@@ -16,6 +16,7 @@ function App() {
     <div className="App">
       <NavBar />
       <Route exact path="/">
+        {quizResult ? JSON.stringify(quizResult) : "nothing"}
         <LandingPage />
       </Route>
 
