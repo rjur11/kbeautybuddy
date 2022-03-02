@@ -1,9 +1,20 @@
 .details {
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+.profile-title {
+  font-size: 50px;
 }
 
-h2 {
+.skin-results {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.quiz-btn {
   position: absolute;
-  padding-left: 20px;
+  left: 75%;
+  top: 20%;
 }

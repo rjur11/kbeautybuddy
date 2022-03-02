@@ -1,20 +1,21 @@
-import NavBar from "../NavBar/NavBar";
 import Shelf from "../Shelf/Shelf";
+import { Link } from "react-router-dom";
 import "./Profile.css";
 
 const Profile = () => {
   return (
     <>
-      <NavBar />
       <div className="details">
-        <h2> Your Skin Profile</h2>
-        <p> Skin Type: ___________</p>
-        <p>Skin Concern: ____________</p>
+        <h2 className="profile-title"> Your Skin Profile</h2>
+        <div className="skin-results">
+          <p> Skin Type: ___________</p>
+          <p>Skin Concern: ____________</p>
+        </div>
+        <Link to="/quiz">
+          <button className="quiz-btn"> Retake Quiz</button>
+        </Link>
+        <Shelf />
       </div>
-      <>
-        <button> Retake Quiz</button>
-      </>
-      <Shelf />
     </>
   );
 };

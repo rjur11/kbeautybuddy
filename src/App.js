@@ -29,6 +29,9 @@ function App() {
           }}
         />
       </Route>
+      <Route exact path="/profile">
+        <Profile />
+      </Route>
     </div>
   );
 }
