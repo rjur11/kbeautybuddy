@@ -1,7 +1,7 @@
 .shelf {
   display: grid;
   background-color: #d8fbc2;
-  height: 350px;
+  height: 375px;
   align-items: center;
   align-content: center;
   flex-direction: column;
@@ -12,7 +12,7 @@
 .images,
 .product-names {
   display: flex;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 img {
@@ -24,4 +24,9 @@ img {
 
 p {
   padding: 40px;
+}
+
+.shelf-header {
+  font-size: 35px;
+  margin: 0;
 }

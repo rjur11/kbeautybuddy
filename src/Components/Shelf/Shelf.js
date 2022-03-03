@@ -50,7 +50,6 @@ const Shelf = ({ products }) => {
   const renderRoutine = () => {
     return (
       <>
-        <h2>Your Shelf:</h2>
         <div className="images">{products.map(renderProduct)}</div>
       </>
     );
@@ -58,6 +57,7 @@ const Shelf = ({ products }) => {
   console.log(products);
   return (
     <div className="shelf">
+      <h2 className="shelf-header">Your Shelf:</h2>
       {products === null ? renderPlaceHolder() : renderRoutine()}
     </div>
   );
