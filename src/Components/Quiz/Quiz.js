@@ -3,7 +3,6 @@ import Question from "../Question/Question";
 
 const Quiz = ({ questions, onComplete }) => {
   const [currQuestionId, setQuestionId] = useState(questions[0].id);
-  const [quizAnswers, setQuizAnswers] = useState([]);
   const [resultObject, setResultObject] = useState({});
 
   const currQuestion = questions.find(({ id }) => currQuestionId === id);
@@ -13,9 +12,7 @@ const Quiz = ({ questions, onComplete }) => {
       text={currQuestion.text}
       answers={currQuestion.answers}
       nextQuestionId={currQuestion.nextQuestionId}
-      onAnswer={({ text, nextQuestionId, value }) => {
-        const newQuizAnswers = [...quizAnswers, text];
-        setQuizAnswers(newQuizAnswers);
+      onAnswer={({ nextQuestionId, value }) => {
         let newResultObject = resultObject;
         if (currQuestion.key) {
           newResultObject = { ...resultObject };
@@ -23,7 +20,7 @@ const Quiz = ({ questions, onComplete }) => {
           setResultObject(newResultObject);
         }
         if (nextQuestionId === "done") {
-          onComplete(newQuizAnswers, newResultObject);
+          onComplete(newResultObject);
         } else {
           setQuestionId(nextQuestionId);
         }
