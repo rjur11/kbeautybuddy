@@ -19,7 +19,7 @@ function App() {
   const [shelfState, setShelfState] = useState(null);
   const history = useHistory();
 
-  const onQuizComplete = (answers, obj) => {
+  const onQuizComplete = (obj) => {
     setQuizResult(obj);
     history.push("/");
     getAllSkincare().then((skincare) => {
