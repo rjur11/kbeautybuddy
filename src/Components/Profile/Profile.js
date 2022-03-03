@@ -7,7 +7,7 @@ const Profile = (quizResult) => {
   const checkForNull = (prop) => {
     return quizResult !== null && quizResult.results !== null
       ? quizResult.results[prop]
-      : "______";
+      : "__________";
   };
   return (
     <>
@@ -25,7 +25,7 @@ const Profile = (quizResult) => {
           <button className="quiz-btn">
             {" "}
             {quizResult === null || quizResult.results === null
-              ? "Take Quiz"
+              ? "Take Skin Quiz to get profile results!"
               : "Retake Quiz"}
           </button>
         </Link>

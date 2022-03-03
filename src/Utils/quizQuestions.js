@@ -73,8 +73,8 @@ const quizQuestions = [
         value: "soothing",
       },
       {
-        text: "Low pH",
-        value: "low pH",
+        text: "Skin barrier care",
+        value: "skin barrier care",
       },
       {
         text: "Acne Care",
@@ -103,9 +103,26 @@ const quizQuestions = [
       {
         text: "5 steps. Cleanser, toner, serum, cream, and SPF.",
         value: ["cleanser", "toner", "serum", "cream", "spf"],
+        nextQuestionId: "spf",
       },
     ],
     key: "steps",
+  },
+  {
+    id: "spf",
+    text: "What type of sunscreen do you prefer?",
+    nextQuestionId: "done",
+    answers: [
+      {
+        text: "Physical",
+        value: "physical",
+      },
+      {
+        text: "Chemical",
+        value: "chemical",
+      },
+    ],
+    key: "spf",
   },
 ];
 
