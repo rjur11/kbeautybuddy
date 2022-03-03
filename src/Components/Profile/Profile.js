@@ -27,8 +27,8 @@ const Profile = ({ results, products }) => {
               : "Retake Quiz"}
           </button>
         </Link>
-        <Shelf products={products} />
       </div>
+      <Shelf products={products} />
     </>
   );
 };

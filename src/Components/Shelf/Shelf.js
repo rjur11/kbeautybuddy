@@ -36,17 +36,21 @@ const Shelf = ({ products }) => {
   };
   const renderProduct = (product) => {
     return (
-      <div>
+      <div className="single-product-details">
         <img
           src={`https://kbeautyphotos.s3.amazonaws.com/${product.filename}.jpeg`}
         />
-        <p>{product.name}</p>
+        <p>
+          {product.brand}
+          <br /> {product.name}
+        </p>
       </div>
     );
   };
   const renderRoutine = () => {
     return (
       <>
+        <h2>Your Shelf:</h2>
         <div className="images">{products.map(renderProduct)}</div>
       </>
     );
