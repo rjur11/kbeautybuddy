@@ -36,7 +36,7 @@ describe("Load homepage and render the expected elements", () => {
       .url()
       .should("eq", "http://localhost:3000/quiz");
   });
-  it("Should be able to click the 'Take Skincare Quiz' button and navigate to quiz page", () => {
+  it("Should be able to click the 'See Skin Profile' button and navigate to quiz page", () => {
     cy.get("div.main-buttons")
       .find("button")
       .contains("See Skin Profile")
@@ -44,7 +44,7 @@ describe("Load homepage and render the expected elements", () => {
       .url()
       .should("eq", "http://localhost:3000/profile");
   });
-  it("Should be able to click the 'Take Skincare Quiz' button and navigate to quiz page", () => {
+  it("Should be able to click the 'Check Your Skincare Shelf' button and navigate to quiz page", () => {
     cy.get("div.main-buttons")
       .find("button")
       .last()
