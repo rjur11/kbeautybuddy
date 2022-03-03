@@ -1,24 +1,32 @@
 .shelf {
   display: grid;
   background-color: #d8fbc2;
-  height: 20%;
+  height: 375px;
   align-items: center;
   align-content: center;
   flex-direction: column;
+  margin-top: 100px;
+  justify-items: center;
 }
 
 .images,
 .product-names {
   display: flex;
+  font-size: 20px;
 }
 
 img {
-  width: 70px;
-  height: 70px;
+  width: 150px;
+  height: 150px;
   background-color: #d8fbc2;
   padding: 40px;
 }
 
 p {
   padding: 40px;
+}
+
+.shelf-header {
+  font-size: 35px;
+  margin: 0;
 }
