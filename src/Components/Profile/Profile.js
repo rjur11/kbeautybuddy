@@ -3,11 +3,9 @@ import { Link } from "react-router-dom";
 import "./Profile.css";
 
 // Need conditional logic to ensure quizResult is not null otherwise page breaks on reload
-const Profile = (quizResult) => {
+const Profile = ({ results, products }) => {
   const checkForNull = (prop) => {
-    return quizResult !== null && quizResult.results !== null
-      ? quizResult.results[prop]
-      : "__________";
+    return results !== null ? results[prop] : "__________";
   };
   return (
     <>
@@ -24,12 +22,12 @@ const Profile = (quizResult) => {
         <Link to="/quiz">
           <button className="quiz-btn">
             {" "}
-            {quizResult === null || quizResult.results === null
+            {results === null
               ? "Take Skin Quiz to get profile results!"
               : "Retake Quiz"}
           </button>
         </Link>
-        <Shelf />
+        <Shelf products={products} />
       </div>
     </>
   );

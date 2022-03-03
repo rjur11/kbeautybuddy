@@ -54,7 +54,10 @@ function App() {
         <Quiz questions={quizQuestions} onComplete={onQuizComplete} />
       </Route>
       <Route exact path="/profile">
-        <Profile results={quizResult} />
+        <Profile results={quizResult} products={shelfState} />
+      </Route>
+      <Route exact path="/shelf">
+        <Shelf products={shelfState} />
       </Route>
     </div>
   );
