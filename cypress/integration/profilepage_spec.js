@@ -41,4 +41,10 @@ describe("Load homepage and render the expected elements", () => {
     cy.get("div.shelf").contains("Cream");
     cy.get("div.shelf").contains("Sunscreen");
   });
+  it("Should be able to click on the logo in the navbar to head to the landingpage", () => {
+    cy.get("h1.logo-title")
+      .click()
+      .url()
+      .should("eq", "http://localhost:3000/");
+  });
 });
