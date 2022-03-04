@@ -1,0 +1,26 @@
+.modal-container {
+  display: flex;
+  background-color: #e9caf3;
+  margin: 0;
+  height: 100%;
+}
+
+.modal-img {
+  height: 500px;
+  width: 500px;
+}
+
+.modal-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-start;
+  font-size: 30px;
+  padding: 10px;
+}
+
+.modal-btn {
+  height: 150px;
+  width: 200px;
+}

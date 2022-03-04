@@ -1,0 +1,15 @@
+.catalog-title {
+  font-size: 40px;
+  padding-top: 10px;
+}
+
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+Modal {
+  height: 580px;
+}

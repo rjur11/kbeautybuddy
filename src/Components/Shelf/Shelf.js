@@ -4,8 +4,9 @@ import Toner from "../../Images/toner.png";
 import Serum from "../../Images/serum.png";
 import Cream from "../../Images/cream.png";
 import SPF from "../../Images/spf.png";
+import Catalog from "../Catalog/Catalog";
 
-const Shelf = ({ products }) => {
+const Shelf = ({ products, onProductClick }) => {
   const renderPlaceHolder = () => {
     return (
       <>
@@ -39,6 +40,7 @@ const Shelf = ({ products }) => {
       <div className="single-product-details">
         <img
           src={`https://kbeautyphotos.s3.amazonaws.com/${product.filename}.jpeg`}
+          alt={`${product.name}`}
         />
         <p>
           {product.brand}
@@ -47,6 +49,7 @@ const Shelf = ({ products }) => {
       </div>
     );
   };
+
   const renderRoutine = () => {
     return (
       <>
@@ -54,12 +57,14 @@ const Shelf = ({ products }) => {
       </>
     );
   };
-  console.log(products);
   return (
-    <div className="shelf">
-      <h2 className="shelf-header">Your Shelf:</h2>
-      {products === null ? renderPlaceHolder() : renderRoutine()}
-    </div>
+    <>
+      <div className="shelf">
+        <h2 className="shelf-header">Your Shelf:</h2>
+        {products === null ? renderPlaceHolder() : renderRoutine()}
+      </div>
+      <Catalog onProductClick={onProductClick} />
+    </>
   );
 };
 

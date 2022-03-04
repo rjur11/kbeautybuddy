@@ -40,16 +40,23 @@ function App() {
     });
   };
 
+  const replaceOnShelf = (product) => {
+    console.log(product);
+    setShelfState(
+      shelfState.map((shelfProduct) =>
+        shelfProduct.productType === product.productType
+          ? product
+          : shelfProduct
+      )
+    );
+  };
+
   return (
     <div className="App">
       <NavBar />
       <Route exact path="/">
-        {quizResult ? JSON.stringify(quizResult) : "nothing"}
-        <br />
-        {shelfState ? JSON.stringify(shelfState) : "nothing"}
         <LandingPage />
       </Route>
-
       <Route exact path="/quiz">
         <Quiz questions={quizQuestions} onComplete={onQuizComplete} />
       </Route>
@@ -57,7 +64,7 @@ function App() {
         <Profile results={quizResult} products={shelfState} />
       </Route>
       <Route exact path="/shelf">
-        <Shelf products={shelfState} />
+        <Shelf products={shelfState} onProductClick={replaceOnShelf} />
       </Route>
     </div>
   );

@@ -1,4 +1,4 @@
-const getAllSkincare = async () => {
+const getAllSkincare = () => {
   return fetch("https://kbeauty-api.herokuapp.com/api/v1/skincare")
     .then((response) => response.json())
     .then((data) => {
@@ -6,7 +6,7 @@ const getAllSkincare = async () => {
     });
 };
 
-const getSingleBrand = async (brand) => {
+const getSingleBrand = (brand) => {
   return fetch(
     `https://kbeauty-api.herokuapp.com/api/v1/skincare/brand/${brand}`
   )
