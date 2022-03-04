@@ -58,6 +58,11 @@ const quizQuestions = [
       },
     ],
     key: "skinSensitivity",
+    blurb: `
+      <p>*Sensitive skin is more prone to reactions such as redness and itching. 
+         Most people who have sensitive skin notice occasional or frequent itching, redness, or burning when testing new products.
+      </p>
+    `,
   },
   {
     id: "skinConcerns",
@@ -123,6 +128,10 @@ const quizQuestions = [
       },
     ],
     key: "spf",
+    blurb: `
+      <p>Physical sunscreen's active ingredients form a reflective barrier on the skin.</p>
+      <p>Chemical sunscreen's active ingredients absorb the sun's rays as releases that energy through heat into the skin.</p>
+    `,
   },
 ];
 
