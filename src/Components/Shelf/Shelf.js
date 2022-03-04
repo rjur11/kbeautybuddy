@@ -49,6 +49,7 @@ const Shelf = ({ products, onProductClick }) => {
       </div>
     );
   };
+
   const renderRoutine = () => {
     return (
       <>
@@ -56,7 +57,6 @@ const Shelf = ({ products, onProductClick }) => {
       </>
     );
   };
-  console.log(products);
   return (
     <>
       <div className="shelf">

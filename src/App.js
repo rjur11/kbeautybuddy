@@ -41,6 +41,7 @@ function App() {
   };
 
   const replaceOnShelf = (product) => {
+    console.log(product);
     setShelfState(
       shelfState.map((shelfProduct) =>
         shelfProduct.productType === product.productType
@@ -54,12 +55,8 @@ function App() {
     <div className="App">
       <NavBar />
       <Route exact path="/">
-        {quizResult ? JSON.stringify(quizResult) : "nothing"}
-        <br />
-        {shelfState ? JSON.stringify(shelfState) : "nothing"}
         <LandingPage />
       </Route>
-
       <Route exact path="/quiz">
         <Quiz questions={quizQuestions} onComplete={onQuizComplete} />
       </Route>

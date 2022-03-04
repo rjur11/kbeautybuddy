@@ -45,7 +45,7 @@ const Catalog = ({ onProductClick }) => {
   };
   return (
     <div>
-      <h2 className="catalog-title">Product Catalog</h2>
+      <h2 className="catalog-title">~~~ Product Catalog ~~~</h2>
       <span>
         <select onChange={handleSelect}>
           <option value="">All</option>
@@ -61,7 +61,13 @@ const Catalog = ({ onProductClick }) => {
         isOpen={selectedProduct !== null}
         onRequestClose={() => setSelectedProduct(null)}
       >
-        <ProductModal selectedProduct={selectedProduct} />
+        <ProductModal
+          selectedProduct={selectedProduct}
+          onProductClick={(product) => {
+            onProductClick(product);
+            setSelectedProduct(null);
+          }}
+        />
       </Modal>
     </div>
   );
