@@ -40,6 +40,16 @@ function App() {
     });
   };
 
+  const replaceOnShelf = (product) => {
+    setShelfState(
+      shelfState.map((shelfProduct) =>
+        shelfProduct.productType === product.productType
+          ? product
+          : shelfProduct
+      )
+    );
+  };
+
   return (
     <div className="App">
       <NavBar />
@@ -57,7 +67,7 @@ function App() {
         <Profile results={quizResult} products={shelfState} />
       </Route>
       <Route exact path="/shelf">
-        <Shelf products={shelfState} />
+        <Shelf products={shelfState} onProductClick={replaceOnShelf} />
       </Route>
     </div>
   );
