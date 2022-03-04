@@ -2,7 +2,7 @@ import { getAllSkincare } from "../../apiCalls";
 import { useState, useEffect } from "react";
 import "./Catalog.css";
 import Modal from "react-modal/lib/components/Modal";
-import ProductModal from "../../ProductModal/ProductModal";
+import ProductModal from "../ProductModal/ProductModal";
 
 const Catalog = ({ onProductClick }) => {
   const [products, setProducts] = useState([]);
