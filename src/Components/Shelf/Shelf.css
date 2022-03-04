@@ -1,9 +1,8 @@
 .shelf {
   display: grid;
   background-color: #d8fbc2;
-  height: 375px;
+  padding: 20px;
   align-items: center;
-  align-content: center;
   flex-direction: column;
   margin-top: 100px;
   justify-items: center;
@@ -29,4 +28,14 @@ p {
 .shelf-header {
   font-size: 35px;
   margin: 0;
+}
+
+@media screen and (min-device-width: 0px) and (max-device-width: 800px) {
+  .images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
 }

@@ -1,12 +1,13 @@
 .nav-bar {
-  display: flex;
+  /* display: flex; */
   background-color: #d8fbc2;
   align-items: center;
   justify-content: space-between;
   padding: 10px;
   font-family: "Roboto", sans-serif;
-  height: 50px;
+  height: auto;
   font-size: 25px;
+  width: 100%;
 }
 .logo-title {
   margin: 0;

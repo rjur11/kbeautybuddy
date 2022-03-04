@@ -17,9 +17,14 @@ const chooseRandom = (arr) => {
 };
 
 function App() {
+  const [allProducts, setAllProducts] = useState(null);
   const [quizResult, setQuizResult] = useState(null);
   const [shelfState, setShelfState] = useState(null);
   const history = useHistory();
+
+  // useEffect(() => {
+  //   getAllSkincare().then(setAllProducts);
+  // }, []);
 
   const onQuizComplete = (obj) => {
     setQuizResult(obj);
