@@ -1,6 +1,8 @@
 import "./App.css";
 import NavBar from "./Components/NavBar/NavBar";
 import Shelf from "./Components/Shelf/Shelf";
+import Catalog from "./Components/Catalog/Catalog";
+import ShelfPage from "./Components/ShelfPage/ShelfPage";
 import Quiz from "./Components/Quiz/Quiz";
 import quizQuestions from "./Utils/quizQuestions";
 import LandingPage from "./Components/LandingPage/LandingPage";
@@ -64,7 +66,7 @@ function App() {
         <Profile results={quizResult} products={shelfState} />
       </Route>
       <Route exact path="/shelf">
-        <Shelf products={shelfState} onProductClick={replaceOnShelf} />
+        <ShelfPage products={shelfState} onProductClick={replaceOnShelf} />
       </Route>
     </div>
   );
