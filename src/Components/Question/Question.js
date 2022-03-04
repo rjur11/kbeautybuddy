@@ -1,6 +1,6 @@
 import "./Question.css";
 
-const Question = ({ text, answers, nextQuestionId, onAnswer }) => {
+const Question = ({ text, answers, nextQuestionId, onAnswer, blurb }) => {
   return (
     <>
       <h3 className="quiz-title">{text}</h3>
@@ -19,6 +19,9 @@ const Question = ({ text, answers, nextQuestionId, onAnswer }) => {
           </button>
         ))}
       </div>
+      {!blurb || (
+        <div className="blurb" dangerouslySetInnerHTML={{ __html: blurb }} />
+      )}
     </>
   );
 };

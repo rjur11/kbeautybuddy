@@ -25,6 +25,7 @@ const Quiz = ({ questions, onComplete }) => {
           setQuestionId(nextQuestionId);
         }
       }}
+      blurb={currQuestion.blurb}
     />
   );
 };
