@@ -63,7 +63,6 @@ const Shelf = ({ products, onProductClick }) => {
         <h2 className="shelf-header">Your Shelf:</h2>
         {products === null ? renderPlaceHolder() : renderRoutine()}
       </div>
-      <Catalog onProductClick={onProductClick} />
     </>
   );
 };
