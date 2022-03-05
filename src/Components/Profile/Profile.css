@@ -28,3 +28,17 @@ p {
   padding: 2px;
   margin: 10px;
 }
+
+@media screen and (min-device-width: 0px) and (max-device-width: 800px) {
+  .details {
+    height: auto;
+  }
+  .quiz-btn {
+    position: relative;
+    left: auto;
+    top: auto;
+  }
+  .shelf {
+    margin: 10px;
+  }
+}

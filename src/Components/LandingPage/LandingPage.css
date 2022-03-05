@@ -1,6 +1,5 @@
 .main-buttons {
   display: flex;
-  height: 100vh;
   justify-content: space-around;
   align-items: center;
 }
@@ -17,4 +16,16 @@ button {
 button:hover {
   transform: scale(1.02);
   filter: brightness(1.05);
+}
+
+@media screen and (min-device-width: 0px) and (max-device-width: 800px) {
+  .main-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  button {
+    width: 175px;
+    height: 175px;
+    margin: 20px;
+  }
 }
