@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding-top: 100px;
 }
 button {
   height: 300px;
@@ -22,6 +23,7 @@ button:hover {
   .main-buttons {
     flex-wrap: wrap;
     justify-content: center;
+    padding-top: 25px;
   }
   button {
     width: 175px;
