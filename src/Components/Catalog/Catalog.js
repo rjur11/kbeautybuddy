@@ -1,19 +1,35 @@
-import { getAllSkincare } from "../../apiCalls";
 import { useState, useEffect } from "react";
 import "./Catalog.css";
 import Modal from "react-modal/lib/components/Modal";
 import ProductModal from "../ProductModal/ProductModal";
 
+const createDropdownOptions = (allProducts, property) => {
+  return allProducts
+    .map((product) => product[property])
+    .reduce((acc, value) => {
+      if (!acc.includes(value)) {
+        acc.push(value);
+      }
+      return acc;
+    }, [])
+    .map((value) => <option value={value}>{value}</option>);
+};
+
 const Catalog = ({ onProductClick, allProducts }) => {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [selectedBrand, setSelectedBrand] = useState("");
 
   const renderProducts = () => {
     return allProducts
-      .filter(
-        (product) =>
-          selectedCategory === "" || product.productType === selectedCategory
-      )
+      .filter((product) => {
+        console.log(`brand: ${selectedBrand}`);
+        return (
+          (selectedCategory === "" ||
+            product.productType === selectedCategory) &&
+          (selectedBrand === "" || product.brand === selectedBrand)
+        );
+      })
       .map((product) => {
         return (
           <div
@@ -36,22 +52,32 @@ const Catalog = ({ onProductClick, allProducts }) => {
       });
   };
 
-  const handleSelect = (e) => {
+  const handleSelectCategory = (e) => {
     setSelectedCategory(e.target.value);
   };
+
+  const handleSelectedBrand = (e) => {
+    setSelectedBrand(e.target.value);
+  };
+
   return (
     <div>
       <h2 className="catalog-title">~~~ Product Catalog ~~~</h2>
-      <span>
-        <select onChange={handleSelect}>
-          <option value="">All</option>
-          <option value="Cleanser">Cleansers</option>
-          <option value="Toner">Toners</option>
-          <option value="Serum">Serums</option>
-          <option value="Cream">Creams</option>
-          <option value="SPF">SPF</option>
-        </select>
-      </span>
+      <div className="filter-options">
+        <span>
+          <label> Filter by Product Type: </label>
+          <select onChange={handleSelectCategory}>
+            <option value="">All</option>
+            {createDropdownOptions(allProducts, "productType")}
+          </select>
+
+          <label> Filter by Brand: </label>
+          <select onChange={handleSelectedBrand}>
+            <option value="">All</option>
+            {createDropdownOptions(allProducts, "brand")}
+          </select>
+        </span>
+      </div>
       <div className="catalog">{renderProducts()}</div>
       <Modal
         isOpen={selectedProduct !== null}
