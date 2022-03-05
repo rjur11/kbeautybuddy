@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Question from "../Question/Question";
+import PropTypes from "prop-types";
 
 const Quiz = ({ questions, onComplete }) => {
   const [currQuestionId, setQuestionId] = useState(questions[0].id);
@@ -31,3 +32,8 @@ const Quiz = ({ questions, onComplete }) => {
 };
 
 export default Quiz;
+
+Quiz.propTypes = {
+  questions: PropTypes.array.isRequired,
+  onComplete: PropTypes.func.isRequired,
+};
