@@ -1,11 +1,11 @@
 import Shelf from "../Shelf/Shelf";
 import Catalog from "../Catalog/Catalog";
 
-const ShelfPage = ({ products, onProductClick }) => {
+const ShelfPage = ({ userProducts, allProducts, onProductClick }) => {
   return (
     <>
-      <Shelf products={products} />
-      <Catalog onProductClick={onProductClick} />
+      <Shelf products={userProducts} />
+      <Catalog allProducts={allProducts} onProductClick={onProductClick} />
     </>
   );
 };
