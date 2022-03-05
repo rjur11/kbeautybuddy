@@ -1,17 +1,11 @@
-const getAllProducts = () => {
-  return fetch("https://kbeauty-api.herokuapp.com/api/v1/skincare")
-    .then((response) => response.json())
-    .then((data) => {
-      return data.skincare;
-    });
-};
-
-const getSingleBrand = (brand) => {
-  return fetch(
-    `https://kbeauty-api.herokuapp.com/api/v1/skincare/brand/${brand}`
-  )
+const getAllProducts = () =>
+  fetch("https://kbeauty-api.herokuapp.com/api/v1/skincare")
     .then((response) => response.json())
     .then((data) => data.skincare);
-};
+
+const getSingleBrand = (brand) =>
+  fetch(`https://kbeauty-api.herokuapp.com/api/v1/skincare/brand/${brand}`)
+    .then((response) => response.json())
+    .then((data) => data.skincare);
 
 export { getAllProducts, getSingleBrand };
