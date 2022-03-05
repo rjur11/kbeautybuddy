@@ -1,6 +1,7 @@
 import Shelf from "../Shelf/Shelf";
 import { Link } from "react-router-dom";
 import "./Profile.css";
+import PropTypes from "prop-types";
 
 // Need conditional logic to ensure quizResult is not null otherwise page breaks on reload
 const Profile = ({ results, products }) => {
@@ -34,3 +35,8 @@ const Profile = ({ results, products }) => {
 };
 
 export default Profile;
+
+Profile.propTypes = {
+  results: PropTypes.any.isRequired,
+  products: PropTypes.any.isRequired,
+};

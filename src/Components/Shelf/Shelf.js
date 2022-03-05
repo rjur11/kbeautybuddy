@@ -4,7 +4,7 @@ import Toner from "../../Images/toner.png";
 import Serum from "../../Images/serum.png";
 import Cream from "../../Images/cream.png";
 import SPF from "../../Images/spf.png";
-import Catalog from "../Catalog/Catalog";
+import PropTypes from "prop-types";
 
 const Shelf = ({ products, onProductClick }) => {
   const renderPlaceHolder = () => {
@@ -68,3 +68,7 @@ const Shelf = ({ products, onProductClick }) => {
 };
 
 export default Shelf;
+
+Shelf.propTypes = {
+  products: PropTypes.array.isRequired,
+};

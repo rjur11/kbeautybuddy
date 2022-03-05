@@ -1,5 +1,5 @@
 import "./ProductModal.css";
-import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const ProductModal = ({ selectedProduct, onProductClick }) => {
   return selectedProduct === null ? (
@@ -34,3 +34,8 @@ const ProductModal = ({ selectedProduct, onProductClick }) => {
 };
 
 export default ProductModal;
+
+ProductModal.propTypes = {
+  selectedProduct: PropTypes.any.isRequired,
+  onProductClick: PropTypes.func.isRequired,
+};

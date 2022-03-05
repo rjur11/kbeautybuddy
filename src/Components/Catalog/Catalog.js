@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import "./Catalog.css";
 import Modal from "react-modal/lib/components/Modal";
 import ProductModal from "../ProductModal/ProductModal";
+import PropTypes from "prop-types";
+Modal.setAppElement("#root");
 
 const createDropdownOptions = (allProducts, property) => {
   return allProducts
@@ -96,3 +98,8 @@ const Catalog = ({ onProductClick, allProducts }) => {
 };
 
 export default Catalog;
+
+Catalog.propTypes = {
+  onProductClick: PropTypes.func.isRequired,
+  allProducts: PropTypes.array.isRequired,
+};

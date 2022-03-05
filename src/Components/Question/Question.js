@@ -1,4 +1,5 @@
 import "./Question.css";
+import PropTypes from "prop-types";
 
 const Question = ({ text, answers, nextQuestionId, onAnswer, blurb }) => {
   return (
@@ -27,3 +28,11 @@ const Question = ({ text, answers, nextQuestionId, onAnswer, blurb }) => {
 };
 
 export default Question;
+
+Question.propTypes = {
+  text: PropTypes.string.isRequired,
+  answers: PropTypes.array.isRequired,
+  nextQuestionId: PropTypes.string.isRequired,
+  onAnswer: PropTypes.func.isRequired,
+  blurb: PropTypes.string.isRequired,
+};
