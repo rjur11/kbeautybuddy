@@ -8,3 +8,15 @@
 body {
   background-color: #e9caf3;
 }
+
+.error-message {
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+}
+
+@media screen and (min-device-width: 0px) and (max-device-width: 800px) {
+  .error-message {
+    font-size: 18px;
+  }
+}

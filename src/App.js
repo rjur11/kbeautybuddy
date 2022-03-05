@@ -37,10 +37,13 @@ function App() {
   const [allProducts, setAllProducts] = useState([]);
   const [quizResult, setQuizResult] = useState(null);
   const [shelfState, setShelfState] = useState(null);
+  const [isError, setIsError] = useState(false);
   const history = useHistory();
 
   useEffect(() => {
-    getAllProducts().then((products) => setAllProducts(products));
+    getAllProducts()
+      .then((products) => setAllProducts(products))
+      .catch((error) => setIsError(true));
   }, []);
 
   const onQuizComplete = (skinProfile) => {
@@ -66,7 +69,11 @@ function App() {
     );
   };
 
-  return (
+  return isError ? (
+    <p className="error-message">
+      We couldn't fetch products, please come back later!
+    </p>
+  ) : (
     <div className="App">
       <NavBar />
       <Route exact path="/">
