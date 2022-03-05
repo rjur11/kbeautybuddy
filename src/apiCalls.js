@@ -1,4 +1,4 @@
-const getAllSkincare = () => {
+const getAllProducts = () => {
   return fetch("https://kbeauty-api.herokuapp.com/api/v1/skincare")
     .then((response) => response.json())
     .then((data) => {
@@ -14,4 +14,4 @@ const getSingleBrand = (brand) => {
     .then((data) => data.skincare);
 };
 
-export { getAllSkincare, getSingleBrand };
+export { getAllProducts, getSingleBrand };

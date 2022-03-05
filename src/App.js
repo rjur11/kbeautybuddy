@@ -9,38 +9,50 @@ import LandingPage from "./Components/LandingPage/LandingPage";
 import Profile from "./Components/Profile/Profile";
 import "./index.css";
 import { Route, useHistory } from "react-router-dom";
-import { useState } from "react";
-import { getAllSkincare } from "./apiCalls";
+import { useEffect, useState } from "react";
+import { getAllProducts } from "./apiCalls";
 
 const chooseRandom = (arr) => {
   return arr[Math.floor(arr.length * Math.random())];
 };
 
+const filterBySkinProfile = (products, skinProfile) =>
+  products
+    .filter((product) => product.skinTypes.includes(skinProfile.skinType))
+    .filter((product) => product.benefits.includes(skinProfile.skinConcerns));
+
+const buildRoutine = (steps, productsForUser, allProducts) => {
+  return steps.map((productType) => {
+    const hasProductType = (product) =>
+      product.productType.toLowerCase() === productType;
+    let productsOfType = productsForUser.filter(hasProductType);
+    if (productsOfType.length === 0) {
+      productsOfType = allProducts.filter(hasProductType);
+    }
+    return chooseRandom(productsOfType);
+  });
+};
+
 function App() {
-  const [allProducts, setAllProducts] = useState(null);
+  const [allProducts, setAllProducts] = useState([]);
   const [quizResult, setQuizResult] = useState(null);
   const [shelfState, setShelfState] = useState(null);
   const history = useHistory();
 
-  const onQuizComplete = (obj) => {
-    setQuizResult(obj);
+  useEffect(() => {
+    getAllProducts().then((products) => setAllProducts(products));
+  }, []);
+
+  const onQuizComplete = (skinProfile) => {
+    setQuizResult(skinProfile);
     history.push("/");
-    getAllSkincare().then((skincare) => {
-      const productsForUser = skincare
-        .filter((product) => product.skinTypes.includes(obj.skinType))
-        .filter((product) => product.benefits.includes(obj.skinConcerns));
-      console.log(productsForUser);
-      const routine = obj.steps.map((productType) => {
-        const hasProductType = (product) =>
-          product.productType.toLowerCase() === productType;
-        let productsOfType = productsForUser.filter(hasProductType);
-        if (productsOfType.length === 0) {
-          productsOfType = skincare.filter(hasProductType);
-        }
-        return chooseRandom(productsOfType);
-      });
-      setShelfState(routine);
-    });
+    const productsForUser = filterBySkinProfile(allProducts, skinProfile);
+    const routine = buildRoutine(
+      skinProfile.steps,
+      productsForUser,
+      allProducts
+    );
+    setShelfState(routine);
   };
 
   const replaceOnShelf = (product) => {
