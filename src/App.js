@@ -22,10 +22,6 @@ function App() {
   const [shelfState, setShelfState] = useState(null);
   const history = useHistory();
 
-  // useEffect(() => {
-  //   getAllSkincare().then(setAllProducts);
-  // }, []);
-
   const onQuizComplete = (obj) => {
     setQuizResult(obj);
     history.push("/");
