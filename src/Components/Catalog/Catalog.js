@@ -4,16 +4,12 @@ import "./Catalog.css";
 import Modal from "react-modal/lib/components/Modal";
 import ProductModal from "../ProductModal/ProductModal";
 
-const Catalog = ({ onProductClick }) => {
-  const [products, setProducts] = useState([]);
+const Catalog = ({ onProductClick, allProducts }) => {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedProduct, setSelectedProduct] = useState(null);
-  useEffect(() => {
-    getAllSkincare().then(setProducts);
-  }, []);
 
   const renderProducts = () => {
-    return products
+    return allProducts
       .filter(
         (product) =>
           selectedCategory === "" || product.productType === selectedCategory

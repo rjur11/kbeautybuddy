@@ -79,7 +79,11 @@ function App() {
         <Profile results={quizResult} products={shelfState} />
       </Route>
       <Route exact path="/shelf">
-        <ShelfPage products={shelfState} onProductClick={replaceOnShelf} />
+        <ShelfPage
+          userProducts={shelfState}
+          allProducts={allProducts}
+          onProductClick={replaceOnShelf}
+        />
       </Route>
     </div>
   );
