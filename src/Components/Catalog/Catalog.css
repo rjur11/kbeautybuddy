@@ -10,10 +10,6 @@
   padding-top: 40px;
 }
 
-Modal {
-  height: 580px;
-}
-
 @media screen and (min-device-width: 0px) and (max-device-width: 800px) {
   .catalog-title {
     font-size: 30px;
