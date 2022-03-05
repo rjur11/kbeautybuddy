@@ -8,7 +8,7 @@ import quizQuestions from "./Utils/quizQuestions";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import Profile from "./Components/Profile/Profile";
 import "./index.css";
-import { Route, useHistory } from "react-router-dom";
+import { Route, useHistory, Switch } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getAllProducts } from "./apiCalls";
 
@@ -76,22 +76,30 @@ function App() {
   ) : (
     <div className="App">
       <NavBar />
-      <Route exact path="/">
-        <LandingPage />
-      </Route>
-      <Route exact path="/quiz">
-        <Quiz questions={quizQuestions} onComplete={onQuizComplete} />
-      </Route>
-      <Route exact path="/profile">
-        <Profile results={quizResult} products={shelfState} />
-      </Route>
-      <Route exact path="/shelf">
-        <ShelfPage
-          userProducts={shelfState}
-          allProducts={allProducts}
-          onProductClick={replaceOnShelf}
-        />
-      </Route>
+      <Switch>
+        <Route exact path="/">
+          <LandingPage />
+        </Route>
+        <Route exact path="/quiz">
+          <Quiz questions={quizQuestions} onComplete={onQuizComplete} />
+        </Route>
+        <Route exact path="/profile">
+          <Profile results={quizResult} products={shelfState} />
+        </Route>
+        <Route exact path="/shelf">
+          <ShelfPage
+            userProducts={shelfState}
+            allProducts={allProducts}
+            onProductClick={replaceOnShelf}
+          />
+        </Route>
+        <Route exact path="/*">
+          <p className="route-error-message">
+            Oops! You've navigated to a page that doesn't exist. Please click
+            kBeautyBuddy to return to the main page.
+          </p>
+        </Route>
+      </Switch>
     </div>
   );
 }
