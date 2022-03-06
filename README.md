@@ -1,7 +1,7 @@
 # kBeautyBuddy
 
 - Click [HERE](https://frontend.turing.edu/projects/module-3/showcase.html) to view the project spec
-- Click [HERE]() to view the deployed site
+- Click [HERE](https://kbeautybuddy.vercel.app/) to view the deployed site
 
 ## Table of Contents
 
@@ -40,11 +40,12 @@ To install this project, please see below:
 3. Finally, run `npm start` and open up localhost at the port indicated to view the webpage
 ```
 
-Alternatively, you can access the deployed site [HERE]()
+Alternatively, you can access the deployed site [HERE](https://kbeautybuddy.vercel.app/)
 
 ## Features
 
-- TBD
+- 100% Lighthouse Audit Accessibility score on all pages
+- 
 
 
 ## See the Site in Action!
@@ -53,7 +54,8 @@ Alternatively, you can access the deployed site [HERE]()
 
 ## Future Goals
 
-- Ability to upload images of finished art
+- Log in capabilities
+- Ability to purchase the routine (or individual products)
 
 ## Stretch Goals
 
