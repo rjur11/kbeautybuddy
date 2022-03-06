@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const Question = ({ text, answers, nextQuestionId, onAnswer, blurb }) => {
   return (
     <>
-      <h3 className="quiz-title">{text}</h3>
+      <h2 className="quiz-title">{text}</h2>
       <div className="quiz-container">
         {answers.map((answer) => (
           <button

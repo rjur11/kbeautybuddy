@@ -12,23 +12,27 @@ const Shelf = ({ products, onProductClick }) => {
       <>
         <div className="images">
           <div>
-            <img className="first" src={Cleanser} />
+            <img
+              className="first"
+              src={Cleanser}
+              alt="placeholder-cleanser-img"
+            />
             <p>Cleanser</p>
           </div>
           <div>
-            <img className="second" src={Toner} />
+            <img className="second" src={Toner} alt="placeholder-toner-img" />
             <p>Toner</p>
           </div>
           <div>
-            <img className="third" src={Serum} />
+            <img className="third" src={Serum} alt="placeholder-serum-img" />
             <p>Serum</p>
           </div>
           <div>
-            <img className="fourth" src={Cream} />
+            <img className="fourth" src={Cream} alt="placeholder-cream-img" />
             <p>Cream</p>
           </div>
           <div>
-            <img className="fifth" src={SPF} />
+            <img className="fifth" src={SPF} alt="placeholder-spf-img" />
             <p>Sunscreen</p>
           </div>
         </div>
