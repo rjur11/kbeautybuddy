@@ -11,7 +11,6 @@ describe("Load shelf page and render the expected elements", () => {
 
   it("Should be able to visit the page and render the expected Navbar elements", () => {
     cy.contains("h1", "KBeautyBuddy");
-    cy.contains("p", "Welcome, Rana");
   });
   it("Should be able to visit the page and render the shelf title", () => {
     cy.contains("Your Shelf");

@@ -11,7 +11,6 @@ describe("Load profile page and render the expected elements", () => {
 
   it("Should be able to visit the page and render the expected Navbar elements", () => {
     cy.contains("h1", "KBeautyBuddy");
-    cy.contains("p", "Welcome, Rana");
   });
   it("Should be able to visit the page and see 'Your Skin Profile'", () => {
     cy.get("h2.profile-title");
