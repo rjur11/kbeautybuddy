@@ -37,7 +37,7 @@ const Shelf = ({ products, onProductClick }) => {
   };
   const renderProduct = (product) => {
     return (
-      <div className="single-product-details">
+      <div className="single-product-details" key={product.name}>
         <img
           src={`https://kbeautyphotos.s3.amazonaws.com/${product.filename}.jpeg`}
           alt={`${product.name}`}
