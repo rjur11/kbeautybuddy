@@ -8,7 +8,6 @@ describe("Load quiz page and answer the questions", () => {
       .url()
       .should("eq", "http://localhost:3000/quiz");
     cy.contains("h1", "KBeautyBuddy");
-    cy.contains("p", "Welcome, Rana");
   });
 
   it("Should be able to answer the first question, 'What skintype do you have?' with any option other than 'I don't know' and go to the next question ", () => {
@@ -87,7 +86,6 @@ describe("Load quiz page and answer the questions", () => {
       .url()
       .should("eq", "http://localhost:3000/quiz");
     cy.contains("h1", "KBeautyBuddy");
-    cy.contains("p", "Welcome, Rana");
   });
   it("Should be able to answer the first question, 'What skintype do you have?' with 'I don't know' and go to the next question ", () => {
     cy.get("h3.quiz-title")
@@ -155,5 +153,25 @@ describe("Load quiz page and answer the questions", () => {
       .get("div.shelf")
       .find("div.single-product-details")
       .should("have.length", 2);
+  });
+  it("Should navigate to the shelf page and update a product in the routine from the catalog ", () => {
+    cy.get("h1.logo-title")
+      .click()
+      .url()
+      .should("eq", "http://localhost:3000/")
+      .get("div.main-buttons")
+      .find("button")
+      .contains("Check Your Skincare Shelf")
+      .click()
+      .url()
+      .should("eq", "http://localhost:3000/shelf")
+      .get("div.catalog")
+      .find("div")
+      .first()
+      .click()
+      .get("button")
+      .click()
+      .get("div.shelf")
+      .contains("Round Lab");
   });
 });
