@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# kBeautyBuddy
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Click [HERE](https://frontend.turing.edu/projects/module-3/showcase.html) to view the project spec
+- Click [HERE]() to view the deployed site
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Abstract](#abstract)
+- [Tech Used](#tech-used)
+- [Installation and Set-Up](#installation-and-set-up)
+- [Features](#features)
+- [See the Site in Action](#see-the-site-in-action)
+- [Future Goals](#future-goals)
+- [Stretch Goals](#stretch-goals)
+- [Created By](#created-by)
+- [Credit](#credit)
 
-### `npm start`
+## Abstract
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Whether you're a skincare noob or retinol lover, this application is here to provide you with your next Korean skincare routine! Why Korean skincare (or k-beauty), specifically? K-beauty focuses on prevention and healing, and skincare routines are individualized to a persons' skin type and skin concerns. Having such personalized routines ensures effective care to the skin. This application will guide a user through a quiz to determine their skin type and top skin concern, and will create a personalized routine of 2-, 3-, or 5- products for them at the end. If they're not happy with the routine provided, they can take the quiz again, or head to the catalog page and learn more about all of the available products. If they find something they prefer, they can swap that product into their routine instead. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Used
 
-### `npm test`
+- React
+- React Router
+- React Modal
+- kbeautyAPI (built by me using Express, JavaScript, hosted on Heroku)
+  - [See the code](https://github.com/rjur11/kbeautyAPI)
+  - [See the deployed API](https://kbeauty-api.herokuapp.com/api/v1/skincare)
+- Figma [Wireframe](https://www.figma.com/file/dcjF8rPND3Nm1W8FdwoPlj/Kbeauty-Solo-Project?node-id=0%3A1)
+- [GitHub Project Board](https://github.com/rjur11/kbeautybuddy/projects/1)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation and Set-Up
 
-### `npm run build`
+To install this project, please see below:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+1. Clone down this Repository using `git clone`
+2. Next, `cd` into the cloned repository and `npm install` to install library dependancies
+3. Finally, run `npm start` and open up localhost at the port indicated to view the webpage
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Alternatively, you can access the deployed site [HERE]()
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Features
 
-### `npm run eject`
+- TBD
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## See the Site in Action!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- COMING SOON
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Future Goals
 
-## Learn More
+- Ability to upload images of finished art
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Stretch Goals
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project allowed me to pick many of my own learning goals. See below for ways I stretched myself even further on this project:
 
-### Code Splitting
+- Extensive End to End testing with Cypress ✅
+- PropTypes ✅
+- React Modal ✅
+- Building out my own API using Express ✅
+- Hosting my API and App ✅
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Created By:
 
-### Analyzing the Bundle Size
+- [Rana Jurjus](https://github.com/rjur11)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Credit
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Skincare placeholder images](https://pngtree.com/freepng/cartoon-beauty-skincare-cosmetics-icon_5776522.html)
+- [Logo Image](https://pngtree.com/freepng/water-cream-skin-care-products-care-products-skin-care-kit_3896800.html)
