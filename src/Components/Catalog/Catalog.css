@@ -10,8 +10,24 @@
   padding-top: 40px;
 }
 
+.filter-options {
+  display: flex;
+  justify-content: center;
+}
+
+label {
+  font-size: 25px;
+}
+
 @media screen and (min-device-width: 0px) and (max-device-width: 800px) {
   .catalog-title {
     font-size: 30px;
+  }
+  .filter-options {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  label {
+    font-size: 12px;
   }
 }
