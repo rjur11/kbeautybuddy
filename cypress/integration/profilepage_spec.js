@@ -1,4 +1,4 @@
-describe("Load homepage and render the expected elements", () => {
+describe("Load profile page and render the expected elements", () => {
   beforeEach(() => {
     cy.visit("http://localhost:3000")
       .get("div.main-buttons")
