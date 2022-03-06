@@ -63,17 +63,20 @@ const Catalog = ({ onProductClick, allProducts }) => {
   };
 
   return (
-    <div>
+    <div className="catalog-container">
       <h2 className="catalog-title">~~~ Product Catalog ~~~</h2>
       <div className="filter-options">
         <span>
           <label> Filter by Product Type: </label>
-          <select onChange={handleSelectCategory}>
+          <select
+            className="all-product-select"
+            onChange={handleSelectCategory}
+          >
             <option value="">All</option>
             {createDropdownOptions(allProducts, "productType")}
           </select>{" "}
           <label> Filter by Brand: </label>
-          <select onChange={handleSelectedBrand}>
+          <select className="all-brand-select" onChange={handleSelectedBrand}>
             <option value="">All</option>
             {createDropdownOptions(allProducts, "brand")}
           </select>
