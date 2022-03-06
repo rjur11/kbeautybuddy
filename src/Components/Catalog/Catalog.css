@@ -19,6 +19,10 @@ label {
   font-size: 25px;
 }
 
+.no-products-message {
+  font-size: 30px;
+}
+
 @media screen and (min-device-width: 0px) and (max-device-width: 800px) {
   .catalog-title {
     font-size: 30px;
@@ -29,5 +33,8 @@ label {
   }
   label {
     font-size: 12px;
+  }
+  .no-products-message {
+    font-size: 15px;
   }
 }

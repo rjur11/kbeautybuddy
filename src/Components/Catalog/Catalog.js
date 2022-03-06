@@ -23,9 +23,8 @@ const Catalog = ({ onProductClick, allProducts }) => {
   const [selectedBrand, setSelectedBrand] = useState("");
 
   const renderProducts = () => {
-    return allProducts
+    const filteredCatalogElements = allProducts
       .filter((product) => {
-        console.log(`brand: ${selectedBrand}`);
         return (
           (selectedCategory === "" ||
             product.productType === selectedCategory) &&
@@ -52,6 +51,15 @@ const Catalog = ({ onProductClick, allProducts }) => {
           </div>
         );
       });
+    if (filteredCatalogElements.length === 0) {
+      return (
+        <p className="no-products-message">
+          Sorry, no products found from those selections. Please search again.
+        </p>
+      );
+    } else {
+      return filteredCatalogElements;
+    }
   };
 
   const handleSelectCategory = (e) => {
