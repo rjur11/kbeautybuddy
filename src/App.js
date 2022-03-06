@@ -12,24 +12,41 @@ import { Route, useHistory, Switch } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getAllProducts } from "./apiCalls";
 
-const chooseRandom = (arr) => {
-  return arr[Math.floor(arr.length * Math.random())];
+const pointsForPredicate = (products, predicate) =>
+  products.map(({ product, points }) => ({
+    product: product,
+    points: predicate(product) ? points + 1 : points,
+  }));
+
+const rankBySkinProfile = (products, skinProfile) => {
+  const productsWithPoints = products.map((product) => ({
+    product: product,
+    points: 0,
+  }));
+  const scoredForSkinType = pointsForPredicate(productsWithPoints, (product) =>
+    product.skinTypes.includes(skinProfile.skinType)
+  );
+  const scoredForSkinConcern = pointsForPredicate(
+    scoredForSkinType,
+    (product) => product.benefits.includes(skinProfile.skinConcerns)
+  );
+  const scoredForSensitivity = pointsForPredicate(
+    scoredForSkinConcern,
+    (product) =>
+      !skinProfile.skinSensitivity ||
+      product.benefits.includes("sensitive skin friendly")
+  );
+  return scoredForSensitivity
+    .sort((a, b) => b.points - a.points)
+    .map(({ product }) => product);
 };
 
-const filterBySkinProfile = (products, skinProfile) =>
-  products
-    .filter((product) => product.skinTypes.includes(skinProfile.skinType))
-    .filter((product) => product.benefits.includes(skinProfile.skinConcerns));
-
-const buildRoutine = (steps, productsForUser, allProducts) => {
+const buildRoutine = (steps, rankedProducts) => {
   return steps.map((productType) => {
     const hasProductType = (product) =>
       product.productType.toLowerCase() === productType;
-    let productsOfType = productsForUser.filter(hasProductType);
-    if (productsOfType.length === 0) {
-      productsOfType = allProducts.filter(hasProductType);
-    }
-    return chooseRandom(productsOfType);
+    const productsOfType = rankedProducts.filter(hasProductType);
+    return productsOfType[0];
   });
 };
 
@@ -49,12 +66,8 @@ function App() {
   const onQuizComplete = (skinProfile) => {
     setQuizResult(skinProfile);
     history.push("/");
-    const productsForUser = filterBySkinProfile(allProducts, skinProfile);
-    const routine = buildRoutine(
-      skinProfile.steps,
-      productsForUser,
-      allProducts
-    );
+    const rankedProducts = rankBySkinProfile(allProducts, skinProfile);
+    const routine = buildRoutine(skinProfile.steps, rankedProducts);
     setShelfState(routine);
   };
 
