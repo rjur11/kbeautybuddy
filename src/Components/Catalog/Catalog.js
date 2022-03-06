@@ -5,16 +5,28 @@ import ProductModal from "../ProductModal/ProductModal";
 import PropTypes from "prop-types";
 Modal.setAppElement("#root");
 
-const createDropdownOptions = (allProducts, property) => {
-  return allProducts
+const createDropdownOptions = (allProducts, property, sortedOrder = false) => {
+  const allOptions = allProducts
     .map((product) => product[property])
     .reduce((acc, value) => {
       if (!acc.includes(value)) {
         acc.push(value);
       }
       return acc;
-    }, [])
-    .map((value) => <option value={value}>{value}</option>);
+    }, []);
+  if (sortedOrder) {
+    allOptions.sort((a, b) => {
+      a = a.toLowerCase();
+      b = b.toLowerCase();
+      if (a < b) {
+        return -1;
+      } else if (b < a) {
+        return 1;
+      }
+      return 0;
+    });
+  }
+  return allOptions.map((value) => <option value={value}>{value}</option>);
 };
 
 const Catalog = ({ onProductClick, allProducts }) => {
@@ -81,12 +93,12 @@ const Catalog = ({ onProductClick, allProducts }) => {
             onChange={handleSelectCategory}
           >
             <option value="">All</option>
-            {createDropdownOptions(allProducts, "productType")}
+            {createDropdownOptions(allProducts, "productType", false)}
           </select>{" "}
           <label> Filter by Brand: </label>
           <select className="all-brand-select" onChange={handleSelectedBrand}>
             <option value="">All</option>
-            {createDropdownOptions(allProducts, "brand")}
+            {createDropdownOptions(allProducts, "brand", true)}
           </select>
         </span>
       </div>
