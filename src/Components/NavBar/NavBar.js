@@ -7,7 +7,6 @@ const NavBar = () => {
       <Link to="/" style={{ textDecoration: "none", color: "black" }}>
         <h1 className="logo-title">KBeautyBuddy</h1>
       </Link>
-      <p>Welcome, Rana</p>
     </div>
   );
 };
