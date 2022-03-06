@@ -71,8 +71,7 @@ const Catalog = ({ onProductClick, allProducts }) => {
           <select onChange={handleSelectCategory}>
             <option value="">All</option>
             {createDropdownOptions(allProducts, "productType")}
-          </select>
-
+          </select>{" "}
           <label> Filter by Brand: </label>
           <select onChange={handleSelectedBrand}>
             <option value="">All</option>
