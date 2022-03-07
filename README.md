@@ -81,6 +81,9 @@ The application is set up with unique URLs thanks to React Router:
 
 ![kbeautybuddyrouter](https://user-images.githubusercontent.com/69861203/156961833-b6ee9787-7c47-4822-99f6-a0a7a2c53c24.png)
 
+And, last but not least, kBeautyBuddy is set up to be mobile responsive, and should work on most mobile screens, as well as your typical desktop setup.
+
+![Mobile demo](https://media.giphy.com/media/LrRsM56twJdhVyGHYz/giphy.gif)
 
 ## Future Goals
 
