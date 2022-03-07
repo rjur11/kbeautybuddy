@@ -16,10 +16,16 @@ describe("Load profile page and render the expected elements", () => {
     cy.get("h2.profile-title");
   });
   it("Should be able to visit the page and render the 'Take Skin Quiz' button", () => {
-    cy.get("button").contains("Take Skin Quiz");
+    cy.get("button.quiz-btn").contains("Take Skin Quiz");
+  });
+  it("Should be able to visit the page and render the 'Back to main page' button", () => {
+    cy.get("button.return-home-btn").contains("Back to main page");
   });
   it("Should be able to click the 'Take Skincare Quiz' button and navigate to quiz page", () => {
-    cy.get("button").click().url().should("eq", "http://localhost:3000/quiz");
+    cy.get("button.quiz-btn")
+      .click()
+      .url()
+      .should("eq", "http://localhost:3000/quiz");
   });
   it("Should be able to visit the page and render skin type and concern div", () => {
     cy.get("div.skin-results");
@@ -42,6 +48,12 @@ describe("Load profile page and render the expected elements", () => {
   });
   it("Should be able to click on the logo in the navbar to head to the landingpage", () => {
     cy.get("h1.logo-title")
+      .click()
+      .url()
+      .should("eq", "http://localhost:3000/");
+  });
+  it("Should be able to click the 'Back to main page' button and navigate to landing page", () => {
+    cy.get("button.return-home-btn")
       .click()
       .url()
       .should("eq", "http://localhost:3000/");

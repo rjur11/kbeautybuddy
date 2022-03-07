@@ -28,6 +28,9 @@ const Profile = ({ results, products }) => {
               : "Retake Quiz"}
           </button>
         </Link>
+        <Link to="/">
+          <button className="return-home-btn">Back to main page</button>
+        </Link>
       </div>
       <Shelf products={products} />
     </>
