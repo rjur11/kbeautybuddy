@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./Catalog.css";
 import Modal from "react-modal/lib/components/Modal";
 import ProductModal from "../ProductModal/ProductModal";
