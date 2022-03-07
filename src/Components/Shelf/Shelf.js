@@ -6,7 +6,7 @@ import Cream from "../../Images/cream.png";
 import SPF from "../../Images/spf.png";
 import PropTypes from "prop-types";
 
-const Shelf = ({ products, onProductClick }) => {
+const Shelf = ({ products }) => {
   const renderPlaceHolder = () => {
     return (
       <>

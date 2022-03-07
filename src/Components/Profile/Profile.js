@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./Profile.css";
 import PropTypes from "prop-types";
 
-// Need conditional logic to ensure quizResult is not null otherwise page breaks on reload
 const Profile = ({ results, products }) => {
   const checkForNull = (prop) => {
     return results !== null ? results[prop] : "__________";
