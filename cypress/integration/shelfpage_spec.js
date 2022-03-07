@@ -1,14 +1,13 @@
 describe("Load shelf page and render the expected elements", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:3000")
+    cy.visit("https://kbeautybuddy.vercel.app/")
       .get("div.main-buttons")
       .find("button")
       .contains("Check Your Skincare Shelf")
       .click()
       .url()
-      .should("eq", "http://localhost:3000/shelf");
+      .should("eq", "https://kbeautybuddy.vercel.app/shelf");
   });
-
   it("Should be able to visit the page and render the expected Navbar elements", () => {
     cy.contains("h1", "KBeautyBuddy");
   });
@@ -70,6 +69,6 @@ describe("Load shelf page and render the expected elements", () => {
     cy.get("h1.logo-title")
       .click()
       .url()
-      .should("eq", "http://localhost:3000/");
+      .should("eq", "https://kbeautybuddy.vercel.app/");
   });
 });

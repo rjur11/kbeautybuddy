@@ -1,14 +1,13 @@
 describe("Load profile page and render the expected elements", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:3000")
+    cy.visit("https://kbeautybuddy.vercel.app/")
       .get("div.main-buttons")
       .find("button")
       .contains("See Skin Profile")
       .click()
       .url()
-      .should("eq", "http://localhost:3000/profile");
+      .should("eq", "https://kbeautybuddy.vercel.app/profile");
   });
-
   it("Should be able to visit the page and render the expected Navbar elements", () => {
     cy.contains("h1", "KBeautyBuddy");
   });
@@ -25,7 +24,7 @@ describe("Load profile page and render the expected elements", () => {
     cy.get("button.quiz-btn")
       .click()
       .url()
-      .should("eq", "http://localhost:3000/quiz");
+      .should("eq", "https://kbeautybuddy.vercel.app/quiz");
   });
   it("Should be able to visit the page and render skin type and concern div", () => {
     cy.get("div.skin-results");
@@ -50,12 +49,12 @@ describe("Load profile page and render the expected elements", () => {
     cy.get("h1.logo-title")
       .click()
       .url()
-      .should("eq", "http://localhost:3000/");
+      .should("eq", "https://kbeautybuddy.vercel.app/");
   });
   it("Should be able to click the 'Back to main page' button and navigate to landing page", () => {
     cy.get("button.return-home-btn")
       .click()
       .url()
-      .should("eq", "http://localhost:3000/");
+      .should("eq", "https://kbeautybuddy.vercel.app/");
   });
 });

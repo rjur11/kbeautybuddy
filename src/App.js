@@ -72,7 +72,6 @@ function App() {
   };
 
   const replaceOnShelf = (product) => {
-    console.log(product);
     setShelfState(
       shelfState.map((shelfProduct) =>
         shelfProduct.productType === product.productType
