@@ -20,19 +20,17 @@ const Profile = ({ results, products }) => {
             Skin Concern: <span>{checkForNull("skinConcerns")}</span>
           </p>
         </div>
-        <div className="profile-buttons">
-          <Link to="/quiz">
-            <button className="quiz-btn">
-              {" "}
-              {results === null
-                ? "Take Skin Quiz to get profile results!"
-                : "Retake Quiz"}
-            </button>
-          </Link>
-          <Link to="/">
-            <button className="return-home-btn">Back to main page</button>
-          </Link>
-        </div>
+        <Link to="/quiz">
+          <button className="quiz-btn">
+            {" "}
+            {results === null
+              ? "Take Skin Quiz to get profile results!"
+              : "Retake Quiz"}
+          </button>
+        </Link>
+        <Link to="/">
+          <button className="return-home-btn">Back to main page</button>
+        </Link>
       </div>
       <Shelf products={products} />
     </>
