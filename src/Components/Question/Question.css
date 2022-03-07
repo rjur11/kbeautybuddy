@@ -14,3 +14,11 @@
 .blurb {
   font-size: 30px;
 }
+
+@media screen and (min-device-width: 0px) and (max-device-width: 800px) {
+  .question-button {
+    height: auto;
+    min-height: 175px;
+    font-size: 20px;
+  }
+}
