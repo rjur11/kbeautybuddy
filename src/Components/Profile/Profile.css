@@ -17,11 +17,16 @@
   font-size: 40px;
 }
 
-.quiz-btn {
+.quiz-btn,
+.return-home-btn {
   position: absolute;
   left: 75%;
-  top: 20%;
+  top: 12%;
   height: 200px;
+}
+
+.return-home-btn {
+  top: 40%;
 }
 
 p {
@@ -33,7 +38,8 @@ p {
   .details {
     height: auto;
   }
-  .quiz-btn {
+  .quiz-btn,
+  .return-home-btn {
     position: relative;
     left: auto;
     top: auto;
