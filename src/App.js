@@ -1,7 +1,5 @@
 import "./App.css";
 import NavBar from "./Components/NavBar/NavBar";
-import Shelf from "./Components/Shelf/Shelf";
-import Catalog from "./Components/Catalog/Catalog";
 import ShelfPage from "./Components/ShelfPage/ShelfPage";
 import Quiz from "./Components/Quiz/Quiz";
 import quizQuestions from "./Utils/quizQuestions";
