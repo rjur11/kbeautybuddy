@@ -27,6 +27,7 @@ Whether you're a skincare noob or retinol lover, this application is here to pro
 - kbeautyAPI (built by me using Express, JavaScript, hosted on Heroku)
   - [See the code](https://github.com/rjur11/kbeautyAPI)
   - [See the deployed API](https://kbeauty-api.herokuapp.com/api/v1/skincare)
+- Cypress for E2E testing
 - Figma [Wireframe](https://www.figma.com/file/dcjF8rPND3Nm1W8FdwoPlj/Kbeauty-Solo-Project?node-id=0%3A1)
 - [GitHub Project Board](https://github.com/rjur11/kbeautybuddy/projects/1)
 - Canva for [User Personas](https://www.canva.com/design/DAE5rHxQcCQ/c-9SWtOYnefbwD4TskCyVg/view?utm_content=DAE5rHxQcCQ&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
@@ -81,6 +82,9 @@ The application is set up with unique URLs thanks to React Router:
 
 ![kbeautybuddyrouter](https://user-images.githubusercontent.com/69861203/156961833-b6ee9787-7c47-4822-99f6-a0a7a2c53c24.png)
 
+And, last but not least, kBeautyBuddy is set up to be mobile responsive, and should work on most mobile screens, as well as your typical desktop setup.
+
+![Mobile demo](https://media.giphy.com/media/LrRsM56twJdhVyGHYz/giphy.gif)
 
 ## Future Goals
 

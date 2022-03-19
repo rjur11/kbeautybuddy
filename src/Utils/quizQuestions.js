@@ -37,7 +37,7 @@ const quizQuestions = [
         value: "dry",
       },
       {
-        text: "Skin seems like a combo of both- can be oily or greasy in some places, and dry in flakey in others.",
+        text: "Skin seems like a combo of both- can be oily or greasy in some places, and dry and flakey in others.",
         value: "combo",
       },
     ],
